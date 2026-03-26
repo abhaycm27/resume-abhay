@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhay C Manoj | Portfolio</title>
+    <style>
+        /* --- 1. Variables & Base Styles [cite: 12, 13] --- */
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --transition: all 0.3s ease;
+        }
+
+        .dark-theme {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            transition: var(--transition);
+            scroll-behavior: smooth;
+        }
+
+        /* --- 2. Navigation [cite: 6, 19] --- */
+        nav {
+            background: var(--card-bg);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* --- 3. Image Slider  --- */
+        .slider-container {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slideAnimation 16s infinite;
+        }
+
+        .slide { width: 25%; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+        @keyframes slideAnimation {
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* --- 4. Layout Sections [cite: 5, 10] --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        section {
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            animation: fadeInUp 0.8s ease-out; /* cite: 18 */
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- 5. Grid for Skills & Strengths [cite: 7, 15] --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* --- 6. Contact Form & Buttons [cite: 9, 18] --- */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        /* --- 7. Mobile Responsiveness [cite: 16] --- */
+        @media (max-width: 600px) {
+            .slider-container { height: 250px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" onclick="document.body.classList.toggle('dark-theme')">🌓</button>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <header id="about" style="text-align: center; padding: 40px 0;">
+            <h1 style="background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3rem;">
+                Abhay C Manoj
+            </h1>
+            <p><strong>B.Tech Computer Science Engineering | 2nd Semester</strong></p>
+            
+            <div class="slider-container">
+                <div class="slides">
+                    <div class="slide"><img src="https://69c40aa1a6d54a4e013e37f1.imgix.net/1000130626.jpg?w=936&h=1418" alt="Programming Setup"></div>
+         
+                    <div class="slide"><img src="https://69c40aa1a6d54a4e013e37f1.imgix.net/1000094823.jpg?w=960&h=1280&ar=960%3A1280" alt="Developer Workspace"></div>
+                    <div class="slide"><img src="https://69c40aa1a6d54a4e013e37f1.imgix.net/1000130731.jpg?w=1545&h=2048&ar=1545%3A2048" alt="Laptop and Coffee"></div>
+                </div>
+            </div>
+            
+            <p style="max-width: 700px; margin: 20px auto;">
+                Passionate student of technology aiming to build intuitive and efficient software solutions.
+            </p>
+        </header>
+
+        <section id="skills">
+            <h2>Skills & Strengths</h2>
+            <div class="grid">
+                <div>
+                    <h3>Technical Expertise</h3>
+                    <span class="skill-badge">C Programming</span>
+                    <span class="skill-badge">HTML5 & CSS3</span>
+                    <span class="skill-badge">Data Structures</span>
+                    <span class="skill-badge">Responsive Design</span>
+                </div>
+                <div>
+                    <h3>Personal Strengths</h3>
+                    <ul>
+                        <li>Analytical Problem Solving</li>
+                        <li>Logical Reasoning</li>
+                        <li>Quick Learning Ability</li>
+                        <li>Collaborative Team Player</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Work & Projects</h2>
+            <div style="border-left: 4px solid var(--primary); padding-left: 20px;">
+                <h3>🏁 RallyNav</h3>
+                <p>A specialized navigation system inspired by rally racing co-drivers. It uses "pace notes" (like "Right 6" or "Left 3") to alert drivers to the sharpness of upcoming turns.</p>
+                <p><strong>API Key:</strong> <code>pk.eyJ1...fwOXng</code></p>
+                <a href="https://share.google/cvoAGtA4hKSUrSD8D" target="_blank" class="btn">View Source Code</a>
+            </div>
+        </section>
+
+        <section id="contact" style="text-align: center;">
+            <h2>Contact Information</h2>
+            <p>Let's work together! Fill out the form below or find me on social media.</p>
+            
+            <form class="contact-form" onsubmit="handleContact(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+
+            <div style="margin-top: 30px;">
+                <a href="https://linkedin.com/in/abhay-c-manoj-7a218b375" target="_blank" class="btn" style="margin: 5px;">LinkedIn</a>
+                <a href="https://instagram.com/abhay_c_m" target="_blank" class="btn" style="background: #e1306c; margin: 5px;">Instagram</a>
+                <p>Email: <a href="mailto:abhaycmanoj3@gmail.com" style="color: var(--primary);">abhaycmanoj3@gmail.com</a></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function handleContact(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button');
+            btn.innerText = "Message Sent! ✓";
+            btn.style.background = "#10b981";
+            event.target.reset();
+            setTimeout(() => {
+                btn.innerText = "Send Message";
+                btn.style.background = "";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
